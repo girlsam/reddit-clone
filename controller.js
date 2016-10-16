@@ -10,12 +10,12 @@
 
   app.controller('PostContentController', PostContentController);
 
-  function PostContentController($rootScope) {
+  function PostContentController($scope, $rootScope) {
     $rootScope.postsArray = [{
       title: 'The Big House',
       author: 'Bo Schembechler',
       image: 'http://grfx.cstv.com/photos/schools/mich/sports/genrel/auto_responsive_bsi/11236115.jpeg',
-      date: '08/10/2016',
+      date: '2016-09-01 21:40:23',
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       voteCount: 4,
       comments: [{
@@ -30,7 +30,7 @@
         title: 'Ohio Stadium',
         author: 'Woody Hayes',
         image: 'https://news.osu.edu/assets/stadium_3_osu_library.jpg',
-        date: '08/22/2016',
+        date: '2016-09-10 19:30:23',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         voteCount: -10,
         comments: [{
@@ -45,7 +45,7 @@
         title: 'McLane Stadium',
         author: 'Robert Griffin III',
         image: 'https://s-media-cache-ak0.pinimg.com/originals/ac/2b/1a/ac2b1a0155bbd0b3ae66d2fcf67ca159.jpg',
-        date: '08/30/2016',
+        date: '2016-08-15 11:10:23',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
         voteCount: 2,
         comments: [{
@@ -60,7 +60,7 @@
         title: 'Bryant-Denny Stadium',
         author: 'Nick Saban',
         image: 'http://a.espncdn.com/photo/2013/1126/ncf_ironbowl_ms_07.jpg',
-        date: '09/30/2016',
+        date: '2016-10-10 21:40:23',
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
         voteCount: 0,
         comments: [{
@@ -69,12 +69,25 @@
         },
         {
           username: 'Les Miles',
-          comment: 'I\'m still relevant.'
+          comment: 'Someone tell me I\'m still relevant.'
         }, {
           username: 'Jim Harbaugh',
           comments: 'Go home, Meyer, you\'re drunk.'
         }]
-      }];
+      }]
+
+    this.upVote = function($rootScope) {
+      console.log($rootScope);
+      // $rootScope.postsArray.voteCount ++;
+      // return $rootScope.postsArray.voteCount;
     }
+
+    this.downVote = function($rootScope) {
+      console.log('test');
+      // $rootScope.postsArray.voteCount --;
+      // return $rootScope.postsArray.voteCount;
+    }
+
+  }
 
 }());

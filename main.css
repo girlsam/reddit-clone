@@ -20,6 +20,18 @@ img {
   margin-left: 2em;
 }
 
+input[type="search"] {
+  margin: 10px;
+  height: 44px !important;
+}
+
+.sort-dropdown {
+  color: black;
+  font-family: 'Oxygen', Arial, sans-serif;
+  font-size: 1em;
+  padding: 10px;
+  font-weight: bold;
+}
 
 /*=====================
 Post Boxes
@@ -55,10 +67,19 @@ Post Boxes
   color: #1DA237;
 }
 
+a[ng-click] {
+  cursor: pointer;
+}
+
 .downvote, .negative-vote {
   color: #EE2C2C;
 }
 
 .vote-zero {
   color: black;
+}
+
+.sub-bottom {
+  font-family: 'Oxygen', Arial, sans-serif;
+  font-size: 0.9em;
 }
