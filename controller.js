@@ -4,13 +4,17 @@
 
   const app = angular.module('redditCloneApp');
 
-//   app.run(function(amMoment) {
-//     amMoment.changeLocale('de');
-// });
+  app.controller(function(amMoment) {
+    amMoment.changeLocale('de');
+  });
 
   app.controller('PostContentController', PostContentController);
 
   function PostContentController($scope, $rootScope) {
+    //default sort by title
+    $rootScope.sortPosts = 'title';
+
+    //data array
     $rootScope.postsArray = [{
       title: 'The Big House',
       author: 'Bo Schembechler',
@@ -72,21 +76,17 @@
           comment: 'Someone tell me I\'m still relevant.'
         }, {
           username: 'Jim Harbaugh',
-          comments: 'Go home, Meyer, you\'re drunk.'
+          comment: 'Go home, Meyer, you\'re drunk.'
         }]
       }]
 
-    this.upVote = function($rootScope) {
-      console.log($rootScope);
-      // $rootScope.postsArray.voteCount ++;
-      // return $rootScope.postsArray.voteCount;
-    }
-
-    this.downVote = function($rootScope) {
-      console.log('test');
-      // $rootScope.postsArray.voteCount --;
-      // return $rootScope.postsArray.voteCount;
-    }
+      //helper functions
+      //validate date to string
+      // validateDate = function(date) {
+      //   console.log(date);
+      //   var validDate = $moment(date, (6, 'days'));
+      //   return validDate;
+      // }
 
   }
 

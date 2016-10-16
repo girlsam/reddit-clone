@@ -16,15 +16,22 @@ img {
   width: 90%;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .container {
   margin-left: 2em;
 }
 
-input[type="search"] {
-  margin: 10px;
-  height: 44px !important;
+.comments-bottom, .add-comment, .add-review {
+  cursor: pointer;
 }
 
+/*=====================
+Nav bar
+=====================*/
 .sort-dropdown {
   color: black;
   font-family: 'Oxygen', Arial, sans-serif;
@@ -33,8 +40,21 @@ input[type="search"] {
   font-weight: bold;
 }
 
+input[type="search"] {
+  margin: 10px 20px 10px 0px;
+  height: 44px !important;
+}
+
+ul.dropdown-content li a {
+  color: #000;
+}
+
+.add-review {
+  margin-left: 10px;
+}
+
 /*=====================
-Post Boxes
+Post Box Main Content
 =====================*/
 .post-box {
   margin-left: 2em;
@@ -73,6 +93,7 @@ a[ng-click] {
 
 .downvote, .negative-vote {
   color: #EE2C2C;
+  cursor: pointer;
 }
 
 .vote-zero {
@@ -82,4 +103,62 @@ a[ng-click] {
 .sub-bottom {
   font-family: 'Oxygen', Arial, sans-serif;
   font-size: 0.9em;
+}
+
+/*=====================
+Post Comments
+=====================*/
+
+.comments-username {
+  font-family: 'Oxygen', Arial, sans-serif;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+.comments-comment {
+  font-family: 'Oxygen', Arial, sans-serif;
+  font-size: 1em;
+}
+
+.comments {
+  margin: 10px;
+}
+
+.submit-comment {
+  margin-top: 1em;
+}
+
+/*=====================
+Add New Post Form
+=====================*/
+
+.review-form {
+  margin-left: 25%;
+}
+
+.input-field input[type=text]:focus + label {
+  color: #000;
+}
+
+.input-field input[type=textarea]:focus + label {
+  color: #000;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+.input-field textarea[type=textarea]:focus + label {
+  color: #000;
+}
+
+.input-field textarea[type=textarea]:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+.add-post {
+  width: 50%;
+  text-align: center;
 }
