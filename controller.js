@@ -19,7 +19,7 @@
       title: 'The Big House',
       author: 'Bo Schembechler',
       image: 'http://grfx.cstv.com/photos/schools/mich/sports/genrel/auto_responsive_bsi/11236115.jpeg',
-      date: '2016-09-01 21:40:23',
+      date: new Date('2016-09-01 21:40:23'),
       content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       voteCount: 4,
       comments: [{
@@ -53,10 +53,6 @@
         content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
         voteCount: 2,
         comments: [{
-          username: 'Cam Newton',
-          comment: 'Ha.'
-        },
-        {
           username: 'RGIII',
           comment: 'I miss this place.'
         }]

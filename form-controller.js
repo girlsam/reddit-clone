@@ -8,9 +8,14 @@
 
   function FormController($scope, $rootScope) {
     $scope.submitForm = function(isValid) {
-      if (!isValid) {
-        console.log('valid');
-      }
+      $rootScope.postsArray.push({
+        title: this.title,
+        description: this.description;
+        author: this.author,
+        image: this.image,
+        date: new Date(),
+        comments: []
+      });
     }
   }
 

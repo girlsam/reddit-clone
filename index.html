@@ -15,6 +15,7 @@
     <nav>
       <div class="nav-wrapper red darken-4">
         <a href="#" class="brand-logo">&nbsp;cREddit. It's Reddit, Cloned.</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li>
             <form name="searchPosts" class="valign-wrapper">
@@ -36,6 +37,18 @@
             </ul>
           </li>
         </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li>
+            <form name="searchPosts" class="valign-wrapper">
+              <div class="input-field">
+                <input id="search" type="search" placeholder="Search Posts" ng-model="search">
+                <label for="search"><i class="material-icons valign">search</i></label>
+                <i class="material-icons valign">close</i>
+              </div>
+            </form>
+          </li>
+          <li><span class="add-review" ng-click="addReview = !addReview">Add Review</span></li>
+        </ul>
       </div>
     </nav>
     <!-- submit new review -->
@@ -45,23 +58,23 @@
           <form class="col s12  review-form" name="newPostForm" ng-submit="addPost()">
             <div class="row">
               <div class="input-field col s6">
-                <input id="stadium_name" type="text">
+                <input id="stadium_name" type="text" ng-model="newPostForm.title">
                 <label for="stadium_name">Stadium Name</label>
               </div>
               <div class="input-field col s6">
-                <input id="author" type="text" class="validate">
-                <label for="author">Author's Name</label>
+                <input id="author" type="text" class="validate" ng-model="author">
+                <label for="newPostForm.author">Author's Name</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="description" type="textarea" class="materialize-textarea"></textarea>
+                <textarea id="description" type="textarea" class="materialize-textarea" ng-model="newPostForm.description"></textarea>
                 <label for="description">Description</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="image" type="text" class="validate">
+                <input id="image" type="text" class="validate" ng-model="newFormPost.image">
                 <label for="image">Stadium Image</label>
               </div>
             </div>
@@ -96,15 +109,15 @@
           </div>
           <div class="row">
             <div class="col s12 m6">
-              <div class="post-image"><img src="{{posts.image}}" alt="Stadium Image"/></div>
+              <div class="post-image"><img ng-src="{{posts.image}}" alt="Stadium Image"/></div>
             </div>
             <div class="col s12 m6">
               <span class="valign post-content black-text">{{posts.content}}</span>
             </div>
           </div>
           <div class="row">
-            <span>Posted: <span class="sub-bottom">{{posts.date|date:'medium'}}</span></span>
-            <span class="bottom-post comments-bottom" ng-click="showComments = !showComments">&nbsp;&nbsp; | Comment(s):</span>
+            <span class="bottom-post"><strong>Posted: </strong></span><time am-time-ago="posts.date" title="{{ posts.date | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a' }}"></time>&nbsp;|
+            <span class="bottom-post" ng-click="showComments = !showComments">&nbsp;&nbsp;<ng-pluralize count="posts.comments.length" when="{'1' : 'Comment: ', 'other': 'Comments: ' }"></ng-pluralize></span>
             <span class="sub-bottom">&nbsp;{{posts.comments.length}}</span>
             <span ng-click="addComments = !addComments" class="add-comment">&nbsp;&nbsp;|&nbsp;&nbsp;Add a Comment</span>
             <div class="comments" ng-show="showComments" ng-repeat="comments in posts.comments">
@@ -132,14 +145,11 @@
     </div>
   </main>
   <!-- footer -->
-  <!-- <footer class="page-footer red darken-4">
-    <a class="grey-text text-lighten-4 center" href="http://reddit.com">Go to the Real Thing.</a>
-  </footer> -->
   <!-- javascript links -->
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/locale/af.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0/angular-moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="controller.js"></script>
   <script type="text/javascript" src="comment-controller.js"></script>
