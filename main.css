@@ -162,3 +162,23 @@ Add New Post Form
   width: 50%;
   text-align: center;
 }
+
+/*=====================
+Validate Forms
+=====================*/
+
+input.ng-invalid {
+  background-color: #EE2C2C;
+  opacity: 0.2;
+}
+
+.error-block {
+  font-family: 'Oxygen', Arial, sans-serif;
+  color: #EE2C2C;
+  margin: 10px;
+}
+
+input.ng-valid {
+  background-color: 1px solid #1DA237;
+  opacity: 80%;
+}
