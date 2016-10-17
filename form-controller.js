@@ -6,16 +6,30 @@
 
   app.controller('FormController', FormController);
 
-  function FormController($scope, $rootScope) {
-    $scope.submitForm = function(isValid) {
+  function FormController($rootScope) {
+    this.addPost = function() {
       $rootScope.postsArray.push({
-        title: this.title,
-        description: this.description;
-        author: this.author,
-        image: this.image,
+        title: this.newPostForm.title,
+        author: this.newPostForm.author,
+        content: this.newPostForm.content,
+        image: this.newPostForm.image,
         date: new Date(),
+        voteCount: 0,
         comments: []
       });
+      this.newPostForm = initForm();
+    }
+
+    function initForm() {
+      return {
+        title: '',
+        author: '',
+        content: '',
+        image: '',
+        date: '',
+        voteCount: 0,
+        comments: []
+      }
     }
   }
 

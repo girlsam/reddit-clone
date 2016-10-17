@@ -52,35 +52,35 @@
       </div>
     </nav>
     <!-- submit new review -->
-    <div ng-show="addReview" class="container">
+    <div ng-show="addReview" class="container" ng-controller="FormController as FormCtrl">
       <div class="review-form">
         <div class="row">
-          <form class="col s12  review-form" name="newPostForm" ng-submit="addPost()">
+          <form class="col s12  review-form" name="newPostForm" ng-submit="FormCtrl.addPost()" novalidate>
             <div class="row">
               <div class="input-field col s6">
-                <input id="stadium_name" type="text" ng-model="newPostForm.title">
+                <input id="stadium_name" type="text" ng-model="FormCtrl.newPostForm.title" name="title">
                 <label for="stadium_name">Stadium Name</label>
               </div>
               <div class="input-field col s6">
-                <input id="author" type="text" class="validate" ng-model="author">
+                <input id="author" type="text" class="validate" ng-model="FormCtrl.newPostForm.author">
                 <label for="newPostForm.author">Author's Name</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="description" type="textarea" class="materialize-textarea" ng-model="newPostForm.description"></textarea>
+                <textarea id="description" type="textarea" class="materialize-textarea" ng-model="FormCtrl.newPostForm.content"></textarea>
                 <label for="description">Description</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="image" type="text" class="validate" ng-model="newFormPost.image">
+                <input id="image" type="text" class="validate" ng-model="FormCtrl.newPostForm.image">
                 <label for="image">Stadium Image</label>
               </div>
             </div>
             <div class="row">
               <div class="col s12 add-post">
-                <button class="btn waves-effect waves-light btn-floating grey darken-4">+</button>
+                <button type="submit" class="btn waves-effect waves-light btn-floating grey darken-4">+</button>
               </div>
             </div>
           </form>
@@ -153,6 +153,6 @@
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="controller.js"></script>
   <script type="text/javascript" src="comment-controller.js"></script>
-  <script type="text/javascript" src="time-controller.js"></script>
+  <script type="text/javascript" src="form-controller.js"></script>
   </body>
 </html>
