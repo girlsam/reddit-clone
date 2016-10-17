@@ -80,14 +80,6 @@
         }]
       }]
 
-      //helper functions
-      //validate date to string
-      // validateDate = function(date) {
-      //   console.log(date);
-      //   var validDate = $moment(date, (6, 'days'));
-      //   return validDate;
-      // }
-
   }
 
 }());

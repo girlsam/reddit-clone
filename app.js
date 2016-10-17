@@ -4,7 +4,7 @@
 
   // angular.module('redditCloneApp', []);
   angular.module('redditCloneApp', []);
-  angular.module('angularMoment', []);
+  //angular.module('angularMoment', []);
 
   $('.dropdown-button').dropdown();
 

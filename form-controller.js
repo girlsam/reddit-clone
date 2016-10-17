@@ -9,7 +9,7 @@
   function FormController($scope, $rootScope) {
     $scope.submitForm = function(isValid) {
       if (!isValid) {
-        console.log('invalid');
+        console.log('valid');
       }
     }
   }

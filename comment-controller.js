@@ -18,10 +18,6 @@
       return item.voteCount;
     }
 
-    $rootScope.$watch('$rootScope.postsArray', function() {
-      this.upVote();
-    }, true)
-
   }
 
 }());

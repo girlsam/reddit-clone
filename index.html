@@ -2,7 +2,7 @@
 <html ng-app="redditCloneApp">
   <head>
     <meta charset="utf-8">
-    <title>cReddit</title>
+    <title>Reddit Clone</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oxygen|Patua+One" rel="stylesheet">
@@ -39,36 +39,35 @@
       </div>
     </nav>
     <!-- submit new review -->
-    <div class="container" ng-show="addReview" ng-controller="FormController as AddPostCtrl">
+    <div ng-show="addReview" class="container">
       <div class="review-form">
         <div class="row">
-          <form class="col s12  review-form" name="newPostForm" ng-submit="addPost()" novalidate>
+          <form class="col s12  review-form" name="newPostForm" ng-submit="addPost()">
             <div class="row">
               <div class="input-field col s6">
-                <input id="stadiumName" type="text" ng-model="newPostForm.title" ng-minlength="3" class="validate" required>
-                <label for="stadiumName" name="stadiumName">Stadium Name</label>
-                <p ng-show="newPostForm.stadiumName.$invalid && !newPostForm.stadiumName.$pristine" class="error-block">Stadium Name must be longer than 3 characters.</p>
+                <input id="stadium_name" type="text">
+                <label for="stadium_name">Stadium Name</label>
               </div>
               <div class="input-field col s6">
-                <input id="author" type="text" class="validate" ng-model="newPostForm.author" required>
-                <label for="author" name="author">Author's Name</label>
+                <input id="author" type="text" class="validate">
+                <label for="author">Author's Name</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="description" type="textarea" class="materialize-textarea validate" ng-model="newPostForm.description" required></textarea>
-                <label for="description" name="description">Description</label>
+                <textarea id="description" type="textarea" class="materialize-textarea"></textarea>
+                <label for="description">Description</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="image" type="text" class="validate" ng-model="newPostForm.image" required>
-                <label for="image" name="image">Stadium Image</label>
+                <input id="image" type="text" class="validate">
+                <label for="image">Stadium Image</label>
               </div>
             </div>
             <div class="row">
               <div class="col s12 add-post">
-                <button class="btn waves-effect waves-light btn-floating grey darken-4" ng-disabled="newPostForm.$invalid">+</button>
+                <button class="btn waves-effect waves-light btn-floating grey darken-4">+</button>
               </div>
             </div>
           </form>
@@ -132,15 +131,18 @@
       </div>
     </div>
   </main>
+  <!-- footer -->
+  <!-- <footer class="page-footer red darken-4">
+    <a class="grey-text text-lighten-4 center" href="http://reddit.com">Go to the Real Thing.</a>
+  </footer> -->
   <!-- javascript links -->
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/locale/af.js"></script> -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0/angular-moment.min.js"></script> -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/locale/af.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0/angular-moment.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="controller.js"></script>
-  <script type="text/javascript" src="comment-controller.js"></script>g
-  <script type="text/javascript" src="form-controller.js"></script>
+  <script type="text/javascript" src="comment-controller.js"></script>
   <script type="text/javascript" src="time-controller.js"></script>
   </body>
 </html>
