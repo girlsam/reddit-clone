@@ -12,7 +12,7 @@
 
   function PostContentController($scope, $rootScope) {
     //default sort by title
-    $rootScope.sortPosts = 'title';
+    $rootScope.sortPosts = '-voteCount';
 
     //data array
     $rootScope.postsArray = [{
